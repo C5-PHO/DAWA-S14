@@ -89,3 +89,66 @@ footer :focus-visible {
     }
   }
 }
+
+.hero-code {
+  position: absolute;
+  right: max(1.5rem, calc((100% - 80rem) / 2));
+  top: 50%;
+  z-index: -1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  color: #81e4cd;
+  opacity: 0.36;
+  font: 0.875rem/2.35 ui-monospace, Consolas, monospace;
+  white-space: pre;
+}
+
+.hero-code span {
+  display: block;
+  width: max-content;
+}
+
+.hero-code b {
+  color: #8dc9f2;
+  font-weight: 500;
+}
+
+.hero-code i {
+  color: #b1f4d0;
+  font-style: normal;
+}
+
+.hero-code-gap {
+  margin-top: 1em;
+}
+
+@media (max-width: 47.99rem) {
+  .hero-code {
+    top: auto;
+    right: 1rem;
+    bottom: 0;
+    transform: none;
+    opacity: 0.15;
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-code span {
+    animation: hero-code-type 13s steps(30, end) infinite both;
+  }
+
+  .hero-code span:nth-child(2) { animation-delay: 0.4s; }
+  .hero-code span:nth-child(3) { animation-delay: 0.8s; }
+  .hero-code span:nth-child(4) { animation-delay: 1.2s; }
+  .hero-code span:nth-child(5) { animation-delay: 1.6s; }
+  .hero-code span:nth-child(6) { animation-delay: 2s; }
+  .hero-code span:nth-child(7) { animation-delay: 2.4s; }
+
+  @keyframes hero-code-type {
+    0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+    3% { opacity: 1; }
+    13%, 75% { clip-path: inset(0 0 0 0); opacity: 1; }
+    80%, 100% { clip-path: inset(0 0 0 0); opacity: 0; }
+  }
+}

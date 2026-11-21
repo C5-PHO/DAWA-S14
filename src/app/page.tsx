@@ -9,6 +9,17 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="hero border-b border-slate-700 bg-slate-900 text-slate-100">
+        <div aria-hidden="true" className="hero-code">
+          <code>
+            <span><b>import</b>{' type { Metadata } '}<b>from</b>{' ' }<i>&apos;next&apos;</i>;</span>
+            <span><b>export function</b>{' generateMetadata() {'}</span>
+            <span>{'  '}<b>return</b>{' { title: '}<i>&apos;Piero HO&apos;</i>{' };'}</span>
+            <span>{'}'}</span>
+            <span className="hero-code-gap"><b>const</b>{' featured = projects.filter('}</span>
+            <span>{'  (project) => project.featured,'}</span>
+            <span>{');'}</span>
+          </code>
+        </div>
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:py-24">
           <div>
             <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">{personalInfo.name}</h1>
