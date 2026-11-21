@@ -11,13 +11,19 @@ export default function Home() {
       <section className="hero border-b border-slate-700 bg-slate-900 text-slate-100">
         <div aria-hidden="true" className="hero-code">
           <code>
-            <span><b>import</b>{' type { Metadata } '}<b>from</b>{' ' }<i>&apos;next&apos;</i>;</span>
-            <span><b>export function</b>{' generateMetadata() {'}</span>
-            <span>{'  '}<b>return</b>{' { title: '}<i>&apos;Piero HO&apos;</i>{' };'}</span>
+            <span><em>{'// Metadatos por proyecto'}</em></span>
+            <span><b>import type</b>{' { Metadata } '}<b>from</b>{' '}<i>&apos;next&apos;</i>;</span>
+            <span><b>export async function</b>{' '}<strong>generateMetadata</strong>{'(props: Props) {'}</span>
+            <span>{'  '}<b>const</b>{' { slug } = '}<b>await</b>{' props.params;'}</span>
+            <span>{'  '}<b>const</b>{' project = projects.'}<strong>find</strong>{'((item) => item.slug === slug);'}</span>
+            <span>{'  '}<b>return</b>{' { title: project?.title ?? '}<i>&apos;Proyectos&apos;</i>{' };'}</span>
             <span>{'}'}</span>
-            <span className="hero-code-gap"><b>const</b>{' featured = projects.filter('}</span>
-            <span>{'  (project) => project.featured,'}</span>
-            <span>{');'}</span>
+            <span className="hero-code-gap"><em>{'// Selección para la portada'}</em></span>
+            <span><b>const</b>{' featured = projects.'}<strong>filter</strong>{'((project) => project.featured);'}</span>
+            <span><b>const</b>{' routes = featured.'}<strong>map</strong>{'(({ slug }) => ' }<i>{'`/projects/${slug}`'}</i>{');'}</span>
+            <span className="hero-code-gap"><em>{'// Prioridades del sitemap'}</em></span>
+            <span><b>const</b>{' priority = { home: '}<small>1</small>{', project: '}<small>0.7</small>{' };'}</span>
+            <span><b>const</b>{' siteMap = routes.'}<strong>map</strong>{'((url) => ({ url, priority: priority.project }));'}</span>
           </code>
         </div>
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:py-24">

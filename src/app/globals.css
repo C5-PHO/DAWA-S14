@@ -98,8 +98,8 @@ footer :focus-visible {
   pointer-events: none;
   transform: translateY(-50%);
   color: #81e4cd;
-  opacity: 0.36;
-  font: 0.875rem/2.35 ui-monospace, Consolas, monospace;
+  opacity: 0.53;
+  font: 0.875rem/1.78 ui-monospace, Consolas, monospace;
   white-space: pre;
 }
 
@@ -109,13 +109,28 @@ footer :focus-visible {
 }
 
 .hero-code b {
-  color: #8dc9f2;
+  color: #82caff;
   font-weight: 500;
 }
 
 .hero-code i {
-  color: #b1f4d0;
+  color: #c3f29e;
   font-style: normal;
+}
+
+.hero-code strong {
+  color: #f7cf90;
+  font-weight: 500;
+}
+
+.hero-code em {
+  color: #a2afc6;
+  font-style: normal;
+}
+
+.hero-code small {
+  color: #e1a9ff;
+  font-size: inherit;
 }
 
 .hero-code-gap {
@@ -135,7 +150,7 @@ footer :focus-visible {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-code span {
-    animation: hero-code-type 13s steps(30, end) infinite both;
+    animation: hero-code-type 16s steps(30, end) infinite both;
   }
 
   .hero-code span:nth-child(2) { animation-delay: 0.4s; }
@@ -144,6 +159,12 @@ footer :focus-visible {
   .hero-code span:nth-child(5) { animation-delay: 1.6s; }
   .hero-code span:nth-child(6) { animation-delay: 2s; }
   .hero-code span:nth-child(7) { animation-delay: 2.4s; }
+  .hero-code span:nth-child(8) { animation-delay: 2.8s; }
+  .hero-code span:nth-child(9) { animation-delay: 3.2s; }
+  .hero-code span:nth-child(10) { animation-delay: 3.6s; }
+  .hero-code span:nth-child(11) { animation-delay: 4s; }
+  .hero-code span:nth-child(12) { animation-delay: 4.4s; }
+  .hero-code span:nth-child(13) { animation-delay: 4.8s; }
 
   @keyframes hero-code-type {
     0% { clip-path: inset(0 100% 0 0); opacity: 0; }
