@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { personalInfo } from '@/lib/data';
 
-const description = `Contacta a ${personalInfo.name} por correo o LinkedIn.`;
+const description = `Consulta el perfil de GitHub de ${personalInfo.name}.`;
 
 export const metadata: Metadata = {
   title: 'Contacto',
@@ -11,25 +11,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <section className="mx-auto max-w-2xl">
-        <h1 className="mb-4 text-4xl font-bold">Contacto</h1>
-        <p className="mb-8 text-lg text-gray-700">
-          Si tienes una consulta o quieres conversar sobre un proyecto, puedes escribirme por correo o LinkedIn.
-        </p>
-        <ul className="space-y-4 rounded-lg bg-white p-6 shadow-sm">
-          <li>
-            <a href={`mailto:${personalInfo.email}`} className="font-medium text-blue-700 hover:underline">
-              {personalInfo.email}
-            </a>
-          </li>
-          <li>
-            <a href={personalInfo.linkedin} className="font-medium text-blue-700 hover:underline">
-              LinkedIn
-            </a>
-          </li>
-        </ul>
-      </section>
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+      <h1 className="border-b border-slate-200 pb-7 text-4xl font-semibold tracking-tight sm:text-5xl">Contacto</h1>
+      <div className="mt-8 max-w-lg">
+        <p className="leading-7 text-slate-600">Puedes encontrar mi perfil y mis repositorios en GitHub.</p>
+        <a href={personalInfo.github} className="mt-5 flex items-center justify-between gap-3 rounded-md border border-slate-300 bg-slate-50 p-5 text-sm font-semibold transition hover:border-teal-700">
+          <span>GitHub <span className="ml-2 font-normal text-slate-600">@Piero-HO</span></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
   );
 }

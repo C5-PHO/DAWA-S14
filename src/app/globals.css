@@ -1,5 +1,91 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Inter Variable", Arial, sans-serif;
+  background: #e8eef1;
+  color: #172436;
+  font-family: "Roboto Variable", Arial, sans-serif;
+}
+
+::selection {
+  background: #d5eae7;
+  color: #122a2b;
+}
+
+:focus-visible {
+  outline: 2px solid #08706a;
+  outline-offset: 4px;
+}
+
+header :focus-visible,
+.hero :focus-visible,
+footer :focus-visible {
+  outline-color: #99f6e4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-project {
+    animation: project-enter 420ms ease-out both;
+  }
+
+  @keyframes project-enter {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+.hero::before {
+  background-image:
+    linear-gradient(rgb(153 246 228 / 19%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(153 246 228 / 19%) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at 82% 55%, black 25%, transparent 88%);
+}
+
+.hero::after {
+  background: radial-gradient(ellipse at 84% 53%, rgb(20 184 166 / 23%), transparent 47%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::after {
+    animation: hero-light-sweep 9s ease-in-out infinite alternate;
+  }
+
+  @keyframes hero-light-sweep {
+    from {
+      opacity: 0.5;
+      transform: translateX(24%);
+    }
+
+    65% {
+      opacity: 1;
+      transform: translateX(-5%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }

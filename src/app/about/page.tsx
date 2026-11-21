@@ -1,56 +1,27 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import Link from 'next/link';
 import { personalInfo } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Sobre Mí',
-  description: `Conoce más sobre ${personalInfo.name}, ${personalInfo.title}`,
+  title: 'Sobre mí',
+  description: personalInfo.description,
 };
 
-const skills = [
-  'JavaScript/TypeScript',
-  'React & Next.js',
-  'Node.js & Express',
-  'PostgreSQL & MongoDB',
-  'Tailwind CSS',
-  'Git & GitHub',
-  'Docker',
-  'AWS',
-];
+const topics = ['Next.js y React', 'TypeScript', 'Tailwind CSS', 'SEO técnico', 'Integración de APIs'];
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="mx-auto max-w-4xl">
-        <h1 className="mb-8 text-4xl font-bold">Sobre Mí</h1>
-        <div className="mb-12 grid gap-8 md:grid-cols-3">
-          <div className="relative aspect-square overflow-hidden rounded-lg">
-            <Image
-              src={personalInfo.avatar}
-              alt={personalInfo.name}
-              fill
-              loading="lazy"
-              sizes="(min-width: 1024px) 280px, (min-width: 768px) 33vw, 100vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="md:col-span-2">
-            <h2 className="mb-4 text-2xl font-bold">¡Hola! Soy {personalInfo.name}</h2>
-            <div className="space-y-4 text-gray-700">
-              <p>Soy un desarrollador full stack apasionado por crear experiencias web excepcionales. Me especializo en construir aplicaciones modernas y escalables.</p>
-              <p>Mi enfoque está en escribir código limpio, mantenible y eficiente, aplicando buenas prácticas para entregar productos de alta calidad.</p>
-              <p>Cuando no estoy programando, me gusta contribuir a proyectos de código abierto, escribir artículos técnicos y aprender nuevas tecnologías.</p>
-            </div>
-          </div>
+    <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+      <h1 className="border-b border-slate-200 pb-7 text-4xl font-semibold tracking-tight sm:text-5xl">Sobre mí</h1>
+      <div className="mt-8 grid gap-10 md:grid-cols-[1fr_19rem]">
+        <div className="max-w-xl space-y-4 text-lg leading-8 text-slate-600">
+          <p>Soy {personalInfo.name}, estudiante de Tecsup. En este portafolio reúno proyectos académicos de desarrollo web e integración de sistemas.</p>
+          <p>Uno de ellos es <Link href="/projects/nexomark-ia" className="font-semibold text-teal-800 underline underline-offset-4">NexoMark IA</Link>, un proyecto en equipo que reúne la generación de contenido publicitario y la aprobación de campañas en un mismo flujo.</p>
         </div>
-        <section>
-          <h2 className="mb-6 text-3xl font-bold">Habilidades Técnicas</h2>
-          <ul className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {skills.map((skill) => (
-              <li key={skill} className="rounded-lg bg-white p-4 text-center font-semibold text-gray-800 shadow-md">
-                {skill}
-              </li>
-            ))}
+        <section className="rounded-md border border-slate-300 bg-slate-50 p-6">
+          <h2 className="text-base font-semibold">Tecnologías y temas</h2>
+          <ul className="mt-3 divide-y divide-slate-200 text-sm text-slate-700">
+            {topics.map((topic) => <li key={topic} className="py-3">{topic}</li>)}
           </ul>
         </section>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import '@fontsource-variable/inter';
+import '@fontsource-variable/roboto';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { personalInfo, projects } from '@/lib/data';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   creator: personalInfo.name,
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
+    locale: 'es_PE',
     url: personalInfo.siteUrl,
     title,
     description: personalInfo.description,
@@ -50,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es">
       <body className="flex min-h-screen flex-col text-gray-900">
         <Header />
-        <main className="grow bg-gray-50">{children}</main>
+        <main className="grow">{children}</main>
         <Footer />
       </body>
     </html>
