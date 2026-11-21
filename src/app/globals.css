@@ -4,7 +4,7 @@ body {
   background-color: #e8eef1;
   background-image: radial-gradient(circle, #abb8c2 1px, transparent 1.6px);
   background-position: center top;
-  background-size: 40px 40px;
+  background-size: 35.8px 35.8px;
   color: #172436;
   font-family: "Roboto Variable", Arial, sans-serif;
 }
@@ -63,7 +63,7 @@ footer :focus-visible {
     radial-gradient(circle at 1px 1px, rgb(203 213 225 / 35%) 1px, transparent 1.6px),
     linear-gradient(rgb(153 246 228 / 19%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(153 246 228 / 19%) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-size: 35.8px 35.8px, 40px 40px, 40px 40px;
   mask-image: radial-gradient(ellipse at 82% 55%, black 25%, transparent 88%);
 }
 
