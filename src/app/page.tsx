@@ -39,7 +39,7 @@ export default function Home() {
           <div className="hero-project-column">
             <Link
               href="/projects/nexomark-ia"
-              className="hero-project group block rounded-md border border-slate-600 bg-slate-950/50 p-5 transition-colors hover:border-teal-300"
+              className="hero-project group block rounded-md border border-slate-600 bg-slate-950 p-5 transition-colors hover:border-teal-300"
             >
               <div className="flex items-center gap-4">
                 <Image src="/projects/nexomark.png" alt="" width={56} height={56} className="rounded-lg" />
