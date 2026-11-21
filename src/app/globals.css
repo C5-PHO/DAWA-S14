@@ -139,6 +139,10 @@ footer :focus-visible {
   margin-top: 1em;
 }
 
+.hero-code-left {
+  display: none;
+}
+
 @media (min-width: 104rem) {
   .hero-code {
     position: absolute;
@@ -147,6 +151,13 @@ footer :focus-visible {
     width: calc((100% - 72rem) / 2 - 1.5rem);
     margin-top: 0;
     transform: translateY(-50%);
+  }
+
+  .hero-code-left {
+    display: block;
+    right: auto;
+    left: 1.5rem;
+    width: calc((100% - 72rem) / 2 - 3rem);
   }
 }
 

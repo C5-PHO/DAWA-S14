@@ -9,6 +9,19 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="hero border-b border-slate-700 bg-slate-900 text-slate-100">
+        <div aria-hidden="true" className="hero-code hero-code-left">
+          <code>
+            <span><em>{'// Rutas del portafolio'}</em></span>
+            <span><b>const</b>{' pages = ['}</span>
+            <span>{'  '}<i>&apos;/&apos;</i>,</span>
+            <span>{'  '}<i>&apos;/projects&apos;</i>,</span>
+            <span>{'  '}<i>&apos;/about&apos;</i>,</span>
+            <span>{'  '}<i>&apos;/contact&apos;</i>,</span>
+            <span>{'];'}</span>
+            <span className="hero-code-gap"><em>{'// Idioma del sitio'}</em></span>
+            <span><b>const</b>{' locale = '}<i>&apos;es-PE&apos;</i>;</span>
+          </code>
+        </div>
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:py-24">
           <div>
             <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">{personalInfo.name}</h1>
