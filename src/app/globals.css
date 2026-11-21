@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 body {
-  background: #e8eef1;
+  background-color: #e8eef1;
+  background-image: radial-gradient(circle, #abb8c2 1px, transparent 1.6px);
+  background-position: center top;
+  background-size: 40px 40px;
   color: #172436;
   font-family: "Roboto Variable", Arial, sans-serif;
 }
@@ -57,6 +60,7 @@ footer :focus-visible {
 
 .hero::before {
   background-image:
+    radial-gradient(circle at 1px 1px, rgb(203 213 225 / 35%) 1px, transparent 1.6px),
     linear-gradient(rgb(153 246 228 / 19%) 1px, transparent 1px),
     linear-gradient(90deg, rgb(153 246 228 / 19%) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -185,11 +189,4 @@ footer :focus-visible {
     13%, 75% { clip-path: inset(0 0 0 0); opacity: 1; }
     80%, 100% { clip-path: inset(0 0 0 0); opacity: 0; }
   }
-}
-
-.projects-background {
-  min-height: 100%;
-  background-image: radial-gradient(circle, #abb8c2 1px, transparent 1.6px);
-  background-position: center top;
-  background-size: 40px 40px;
 }
