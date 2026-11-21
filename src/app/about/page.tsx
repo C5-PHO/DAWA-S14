@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import TechnologyBadge from '@/components/TechnologyBadge';
 import { personalInfo } from '@/lib/data';
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   description: personalInfo.description,
 };
 
-const topics = ['Next.js y React', 'TypeScript', 'Tailwind CSS', 'SEO técnico', 'Integración de APIs'];
+const topics = ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'SEO técnico', 'Integración de APIs'];
 
 export default function AboutPage() {
   return (
@@ -20,8 +21,8 @@ export default function AboutPage() {
         </div>
         <section className="rounded-md border border-slate-300 bg-slate-50 p-6">
           <h2 className="text-base font-semibold">Tecnologías y temas</h2>
-          <ul className="mt-3 divide-y divide-slate-200 text-sm text-slate-700">
-            {topics.map((topic) => <li key={topic} className="py-3">{topic}</li>)}
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {topics.map((topic) => <li key={topic}><TechnologyBadge name={topic} /></li>)}
           </ul>
         </section>
       </div>

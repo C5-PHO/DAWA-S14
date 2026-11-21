@@ -25,6 +25,8 @@ const logos: Record<string, { path: string } | undefined> = {
 };
 
 const symbols: Record<string, string | undefined> = {
+  'SEO técnico': 'M21 21l-4.3-4.3 M19 11a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z M8 14l3-3 2 1 2-3',
+  'Integración de APIs': 'M10 13a4 4 0 0 0 6 1l4-4a4 4 0 0 0-6-6l-2 2 M14 11a4 4 0 0 0-6-1l-4 4a4 4 0 0 0 6 6l2-2',
   Gemini: 'M12 2c0 6-4 10-10 10 6 0 10 4 10 10 0-6 4-10 10-10C16 12 12 8 12 2Z',
   NextAuth: 'M12 22s7-3 7-10V5l-7-3-7 3v7c0 7 7 10 7 10Z M9 12l2 2 4-4',
   OAuth: 'M15 3a5 5 0 1 1-3.5 8.6L4 19v2H2v-4l7.4-7.5A5 5 0 0 1 15 3Z M16 8h.01',
