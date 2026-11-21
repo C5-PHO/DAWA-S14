@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio de Piero HO
 
-## Getting Started
+Portafolio académico de desarrollo web e integración de sistemas, creado en Tecsup para el laboratorio 14 de Desarrollo de Aplicaciones Web Avanzado (DAWA). Presenta proyectos web y móviles, con **NexoMark IA** y **Nexora** como destacados.
 
-First, run the development server:
+[Ver portafolio en Vercel](https://dawa-s14.vercel.app/)
 
-```bash
+## Tecnologías
+
+- **Next.js 16**, **React 19** y **TypeScript** para las páginas y fichas de proyectos.
+- **Tailwind CSS 4** y **PostCSS** para el diseño adaptable.
+- **Roboto Variable** con Fontsource e iconos de tecnologías con Simple Icons.
+- **Vercel** para el despliegue desde la rama `main`.
+
+## Ejecución local
+
+Requisitos: Node.js 22 LTS y npm.
+
+```powershell
+git clone https://github.com/C5-PHO/DAWA-S14.git
+cd DAWA-S14
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) o la dirección que indique la terminal.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Comando | Uso |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo. |
+| `npm run lint` | Revisa el código con ESLint. |
+| `npm run build` | Compila la aplicación y genera las rutas estáticas. |
+| `npm run start` | Sirve la compilación de producción en local. |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Rutas
 
-## Learn More
+| Ruta | Contenido |
+| --- | --- |
+| `/` | Presentación y proyectos destacados. |
+| `/projects` | Catálogo de proyectos y sus tecnologías. |
+| `/projects/[slug]` | Ficha de cada proyecto, con enlaces al código cuando están disponibles. |
+| `/about` | Perfil académico y tecnologías. |
+| `/contact` | Enlace al perfil de GitHub. |
+| `/sitemap.xml` | Mapa del sitio con las páginas y fichas de proyectos. |
+| `/robots.txt` | Reglas de rastreo y referencia al sitemap. |
 
-To learn more about Next.js, take a look at the following resources:
+## SEO y rendimiento
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Las fichas de proyectos se prerenderizan con `generateStaticParams` y generan su título, descripción e imagen para Open Graph y Twitter con `generateMetadata`. El sitemap toma las fichas del mismo catálogo que usa la interfaz. Las tarjetas usan `next/image` con carga diferida y tamaños adaptables. La animación de portada respeta la preferencia de movimiento reducido.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Para auditar el rendimiento con Lighthouse, ejecuta `npm run build` y luego `npm run start`. Abre el sitio en Chrome y genera informes en Desktop y Mobile.
 
-## Deploy on Vercel
+## Configuración del dominio
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+La aplicación usa `SITE_URL` si está definida y, en Vercel, recurre a `VERCEL_PROJECT_PRODUCTION_URL`. La URL resultante se usa en los metadatos, el sitemap y `robots.txt`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Uso |
+| --- | --- |
+| `SITE_URL` | Opcional. URL absoluta del dominio público. Configúrala si el sitio se publica bajo un dominio personalizado. |
+| `VERCEL_PROJECT_PRODUCTION_URL` | Variable de sistema de Vercel con el dominio de producción. |
+| `GOOGLE_SITE_VERIFICATION` | Opcional. Código de verificación de Google Search Console. |
+
+## Estructura
+
+| Ruta del repositorio | Responsabilidad |
+| --- | --- |
+| [`src/app/`](src/app) | Páginas, metadatos y rutas SEO. |
+| [`src/components/`](src/components) | Navegación, tarjetas e iconos de tecnologías. |
+| [`src/lib/data.ts`](src/lib/data.ts) | Datos del perfil, catálogo y selección de destacados. |
+| [`public/projects/`](public/projects) | Imágenes y logotipos del catálogo. |
