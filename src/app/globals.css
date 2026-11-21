@@ -90,17 +90,19 @@ footer :focus-visible {
   }
 }
 
+.hero-project-column {
+  min-width: 0;
+}
+
 .hero-code {
-  position: absolute;
-  right: max(1.5rem, calc((100% - 80rem) / 2));
-  top: 50%;
-  z-index: -1;
+  margin-top: 1.25rem;
+  overflow: hidden;
   pointer-events: none;
-  transform: translateY(-50%);
   color: #81e4cd;
   opacity: 0.53;
-  font: 0.875rem/1.78 ui-monospace, Consolas, monospace;
+  font: 0.75rem/1.65 ui-monospace, Consolas, monospace;
   white-space: pre;
+  mask-image: linear-gradient(90deg, black 82%, transparent);
 }
 
 .hero-code span {
@@ -137,14 +139,14 @@ footer :focus-visible {
   margin-top: 1em;
 }
 
-@media (max-width: 47.99rem) {
+@media (min-width: 104rem) {
   .hero-code {
-    top: auto;
-    right: 1rem;
-    bottom: 0;
-    transform: none;
-    opacity: 0.15;
-    font-size: 0.75rem;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    width: calc((100% - 72rem) / 2 - 1.5rem);
+    margin-top: 0;
+    transform: translateY(-50%);
   }
 }
 

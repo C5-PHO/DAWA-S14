@@ -9,23 +9,6 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="hero border-b border-slate-700 bg-slate-900 text-slate-100">
-        <div aria-hidden="true" className="hero-code">
-          <code>
-            <span><em>{'// Metadatos por proyecto'}</em></span>
-            <span><b>import type</b>{' { Metadata } '}<b>from</b>{' '}<i>&apos;next&apos;</i>;</span>
-            <span><b>export async function</b>{' '}<strong>generateMetadata</strong>{'(props: Props) {'}</span>
-            <span>{'  '}<b>const</b>{' { slug } = '}<b>await</b>{' props.params;'}</span>
-            <span>{'  '}<b>const</b>{' project = projects.'}<strong>find</strong>{'((item) => item.slug === slug);'}</span>
-            <span>{'  '}<b>return</b>{' { title: project?.title ?? '}<i>&apos;Proyectos&apos;</i>{' };'}</span>
-            <span>{'}'}</span>
-            <span className="hero-code-gap"><em>{'// Selección para la portada'}</em></span>
-            <span><b>const</b>{' featured = projects.'}<strong>filter</strong>{'((project) => project.featured);'}</span>
-            <span><b>const</b>{' routes = featured.'}<strong>map</strong>{'(({ slug }) => ' }<i>{'`/projects/${slug}`'}</i>{');'}</span>
-            <span className="hero-code-gap"><em>{'// Prioridades del sitemap'}</em></span>
-            <span><b>const</b>{' priority = { home: '}<small>1</small>{', project: '}<small>0.7</small>{' };'}</span>
-            <span><b>const</b>{' siteMap = routes.'}<strong>map</strong>{'((url) => ({ url, priority: priority.project }));'}</span>
-          </code>
-        </div>
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:px-8 sm:py-20 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] md:py-24">
           <div>
             <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">{personalInfo.name}</h1>
@@ -40,20 +23,39 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Link
-            href="/projects/nexomark-ia"
-            className="hero-project group rounded-md border border-slate-600 bg-slate-950/50 p-5 transition-colors hover:border-teal-300"
-          >
-            <div className="flex items-center gap-4">
-              <Image src="/projects/nexomark.png" alt="" width={56} height={56} className="rounded-lg" />
-              <div>
-                <p className="text-xs font-medium text-teal-200">Proyecto actual · En desarrollo</p>
-                <p className="mt-1 text-lg font-semibold text-white">NexoMark IA</p>
+          <div className="hero-project-column">
+            <Link
+              href="/projects/nexomark-ia"
+              className="hero-project group block rounded-md border border-slate-600 bg-slate-950/50 p-5 transition-colors hover:border-teal-300"
+            >
+              <div className="flex items-center gap-4">
+                <Image src="/projects/nexomark.png" alt="" width={56} height={56} className="rounded-lg" />
+                <div>
+                  <p className="text-xs font-medium text-teal-200">Proyecto actual · En desarrollo</p>
+                  <p className="mt-1 text-lg font-semibold text-white">NexoMark IA</p>
+                </div>
+                <span aria-hidden="true" className="ml-auto text-xl text-teal-200 motion-safe:transition-transform motion-safe:group-hover:translate-x-1">→</span>
               </div>
-              <span aria-hidden="true" className="ml-auto text-xl text-teal-200 motion-safe:transition-transform motion-safe:group-hover:translate-x-1">→</span>
+              <p className="mt-4 text-sm leading-6 text-slate-300">Generación de anuncios con IA y aprobación de campañas entre agencia y cliente.</p>
+            </Link>
+            <div aria-hidden="true" className="hero-code">
+              <code>
+                <span><em>{'// Metadatos por proyecto'}</em></span>
+                <span><b>import type</b>{' { Metadata } '}<b>from</b>{' '}<i>&apos;next&apos;</i>;</span>
+                <span><b>export async function</b>{' '}<strong>generateMetadata</strong>{'(props: Props) {'}</span>
+                <span>{'  '}<b>const</b>{' { slug } = '}<b>await</b>{' props.params;'}</span>
+                <span>{'  '}<b>const</b>{' project = projects.'}<strong>find</strong>{'((item) => item.slug === slug);'}</span>
+                <span>{'  '}<b>return</b>{' { title: project?.title ?? '}<i>&apos;Proyectos&apos;</i>{' };'}</span>
+                <span>{'}'}</span>
+                <span className="hero-code-gap"><em>{'// Selección para la portada'}</em></span>
+                <span><b>const</b>{' featured = projects.'}<strong>filter</strong>{'((project) => project.featured);'}</span>
+                <span><b>const</b>{' routes = featured.'}<strong>map</strong>{'(({ slug }) => ' }<i>{'`/projects/${slug}`'}</i>{');'}</span>
+                <span className="hero-code-gap"><em>{'// Prioridades del sitemap'}</em></span>
+                <span><b>const</b>{' priority = { home: '}<small>1</small>{', project: '}<small>0.7</small>{' };'}</span>
+                <span><b>const</b>{' siteMap = routes.'}<strong>map</strong>{'((url) => ({ url, priority: priority.project }));'}</span>
+              </code>
             </div>
-            <p className="mt-4 text-sm leading-6 text-slate-300">Generación de anuncios con IA y aprobación de campañas entre agencia y cliente.</p>
-          </Link>
+          </div>
         </div>
       </section>
 
