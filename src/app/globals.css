@@ -186,3 +186,10 @@ footer :focus-visible {
     80%, 100% { clip-path: inset(0 0 0 0); opacity: 0; }
   }
 }
+
+.projects-background {
+  min-height: 100%;
+  background-image: radial-gradient(circle, #abb8c2 1px, transparent 1.6px);
+  background-position: center top;
+  background-size: 40px 40px;
+}
